@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "alias": "bbolson"
+    },
+    {
+      "id": 2,
+      "alias": "frodo"
+    },
+    {
+      "alias": "gandalf",
+      "id": 3
+    },
+    {
+      "id": 5,
+      "alias": "legolas"
+    },
+    {
+      "id": 6,
+      "alias": "legolas"
+    }
+  ]
+}

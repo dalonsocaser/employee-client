@@ -1,6 +1,9 @@
 package es.caser.archit.spring.service;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,8 +28,19 @@ public class EmployeeServiceImplTest {
 	private IEmployeeService employeeService;
 	@Test
 	public void testFindByAlias() {
-		Employee empleado=employeeService.findByAlias("hola");
+		List<Employee> empleado=employeeService.findByAlias("bbolson");
 		assertNotNull(empleado);
+		assertNotEquals(0, empleado.size());
 	}
-
+	@Test
+	public void testFindE2E() {
+		employeeService.add("legolas");
+		List<Employee> empleado=employeeService.findByAlias("legolas");
+		assertNotNull(empleado);
+		assertNotEquals(1, empleado.size());
+		employeeService.delete("legolas");
+		empleado=employeeService.findByAlias("legolas");
+		assertNotNull(empleado);
+		assertNotEquals(0, empleado.size());
+	}
 }
